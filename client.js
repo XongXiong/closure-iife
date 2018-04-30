@@ -3,7 +3,7 @@
 
 function bob() {
     var foo = "foo2";
-    console.log(foo);
+    console.log(foo); // logs "foo2"
 };
 
 bob();
@@ -12,7 +12,7 @@ bob();
 
 (function bob() {
     var foo = "foo2";
-    console.log(foo);
+    console.log(foo); // logs "foo2"
 })();
 
 // This allows us to simplify our code and allow us to not have to write so many lines of code
@@ -32,7 +32,7 @@ for (var i = 1; i < 6; i++) {
 for (var i = 1; i < 6; i++) {
     (function (i) {
         setTimeout(function () {
-            console.log('i: ' + i);
+            console.log('i: ' + i); // Logs "i: 1", "i: 2", "i: 3", "i: 4", "i: 5"
         }, i * 1000);
     })(i);
 }
@@ -41,7 +41,13 @@ for (var i = 1; i < 6; i++) {
 for (var i = 1; i < 6; i++) {
     let j = i;
     setTimeout(function(){
-        console.log('j: ' + j);
+        console.log('j: ' + j); // Logs "j: 1", "j: 2", "j: 3", "j: 4", "j: 5"
     }, j * 1000);
 }
 
+// using let vs var
+for (let i = 1; i < 6; i++) {
+    setTimeout(function () {
+        console.log('i: ' + i); // Logs "i: 1", "i: 2", "i: 3", "i: 4", "i: 5"
+    }, i * 1000);
+}
