@@ -37,3 +37,11 @@ for (var i = 1; i < 6; i++) {
     })(i);
 }
 
+// Block Scoping
+for (var i = 1; i < 6; i++) {
+    let j = i;
+    setTimeout(function(){
+        console.log('j: ' + j);
+    }, j * 1000);
+}
+
